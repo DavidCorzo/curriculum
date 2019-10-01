@@ -13,7 +13,7 @@ def root():
 
 @app.route('/personal_info')
 def personal_info():
-    return render_template('personal_info.html', name=master['Name'], age=master['Age'], nationality=master['Nationality'], schooling=master['schooling'], carrer=master['career'], academic=master['academic'], work=master['work'])
+    return render_template('personal_info.html', name=master['Name'], age=master['Age'], nationality=master['Nationality'], schooling=master['schooling'], carrer=master['career'], academic=master['academic'], work=master['schooling_schools'], schooling_schools=master['schooling_schools'])
 
 
 @app.route('/about')
@@ -23,7 +23,12 @@ def about():
 
 @app.route('/contact')
 def contact():
-    return render_template('contact.html', telephone=master['Telephone'], nationality=master['Nationality'], email=master['E-mail'])
+    return render_template('contact.html', telephone=master['Telephone'], nationality=master['Nationality'], email=master['E-mail'], fb=master['fb'], tw=master['tw'], ig=master['ig'], link_in=master['link_in'], )
+
+
+@app.route('/work')
+def work():
+    return render_template('work.html', work=master['work'])
 
 
 if __name__ == "__main__":
